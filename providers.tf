@@ -12,6 +12,14 @@ terraform {
       version = "3.3.2"
     }
   }
+
+  backend "azurerm" {
+    environment          = "public"
+    storage_account_name = "azterraformstg"
+    container_name       = "deployments"
+    key                  = "librechat-test.tfstate"
+    resource_group_name  = "momint-infra-core"
+  }
 }
 
 provider "azurerm" {
