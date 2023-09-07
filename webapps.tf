@@ -45,8 +45,8 @@ resource "azurerm_linux_web_app" "librechat" {
 
     APP_TITLE = var.app_title
 
-    AZURE_API_KEY                                = module.openai.openai_primary_key
-    AZURE_OPENAI_API_INSTANCE_NAME               = split("//", split(".", module.openai.openai_endpoint)[0])[1]
+    #AZURE_API_KEY                                = module.openai.openai_primary_key
+    #AZURE_OPENAI_API_INSTANCE_NAME               = split("//", split(".", module.openai.openai_endpoint)[0])[1]
     AZURE_OPENAI_API_DEPLOYMENT_NAME             = "gpt-35-turbo"
     AZURE_OPENAI_API_VERSION                     = "2023-05-15"
     AZURE_OPENAI_API_COMPLETIONS_DEPLOYMENT_NAME = "gpt-35-turbo"
@@ -90,7 +90,7 @@ resource "azurerm_linux_web_app" "librechat" {
   }
   virtual_network_subnet_id = azurerm_subnet.librechat_subnet.id
 
-  depends_on = [azurerm_linux_web_app.meilisearch, azurerm_cosmosdb_account.librechat, module.openai]
+  depends_on = [azurerm_linux_web_app.meilisearch, azurerm_cosmosdb_account.librechat]#, module.openai]
   # depends_on = [azurerm_linux_web_app.meilisearch]
 }
 
