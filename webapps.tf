@@ -90,7 +90,7 @@ resource "azurerm_linux_web_app" "librechat" {
   }
   virtual_network_subnet_id = azurerm_subnet.librechat_subnet.id
 
-  depends_on = [azurerm_linux_web_app.meilisearch, azurerm_cosmosdb_account.librechat]#, module.openai]
+  depends_on = [azurerm_linux_web_app.meilisearch, azurerm_cosmosdb_account.librechat] #, module.openai]
   # depends_on = [azurerm_linux_web_app.meilisearch]
 }
 

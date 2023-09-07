@@ -10,24 +10,24 @@ variable "app_title" {
 
 variable "openai_key" {
   description = "OpenAI API Key"
-  default = ""
-  sensitive = true
+  default     = ""
+  sensitive   = true
 }
 
 variable "app_service_sku_name" {
   description = "size of the VM that runs the librechat app. F1 is free but limited to 1h per day."
-  default = "B3"
+  default     = "B3"
 }
 
 variable "mongo_uri" {
   description = "Connection string for the mongodb"
-  default = ""
-  sensitive = true
+  default     = ""
+  sensitive   = true
 }
 
 variable "use_cosmosdb_free_tier" {
   description = "Flag to enable/disable free tier of cosmosdb. This needs to be false if another instance already uses free tier."
-  default = true
+  default     = true
 }
 
 # variable "deployments" {
@@ -54,6 +54,6 @@ variable "use_cosmosdb_free_tier" {
 
 variable "public_network_access_enabled" {
   description = "(Optional) Specifies whether public network access is allowed for the Azure OpenAI Service"
-  type = bool
-  default = false
+  type        = bool
+  default     = false
 }
