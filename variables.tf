@@ -16,7 +16,7 @@ variable "openai_key" {
 
 variable "app_service_sku_name" {
   description = "size of the VM that runs the librechat app. F1 is free but limited to 1h per day."
-  default     = "B3"
+  default     = "P1v2"
 }
 
 variable "mongo_uri" {
